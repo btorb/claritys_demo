@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaChartLine, FaChessKnight, FaCogs, FaGraduationCap, FaLightbulb, FaPuzzlePiece, FaRocket, FaLinkedin } from 'react-icons/fa';
+import { FaChartLine, FaChessKnight, FaCogs, FaGraduationCap, FaLightbulb, FaPuzzlePiece, FaRocket, FaLinkedin, FaShoppingCart, FaCheck, FaDatabase } from 'react-icons/fa';
 import './App.css';
 
 // Define the team members with their names, titles, descriptions, LinkedIn URLs, and image URLs
@@ -58,6 +58,16 @@ const approachSteps = [
   { name: "Training and Workshops", description: "Provide hands-on training to ensure successful adoption.", icon: FaGraduationCap },
   { name: "Ongoing Support and Optimization", description: "Continuous monitoring and refinement for optimal performance.", icon: FaRocket },
   { name: "Scalability and Future Enhancements", description: "Plan for future growth and expansion with scalable AI solutions.", icon: FaChartLine },
+];
+
+// Define the benefits with their titles, descriptions, and icons
+const benefits = [
+  { title: "Efficiency Improvement", description: "Streamline your business processes with AI automation solutions.", icon: FaRocket },
+  { title: "Cost Reduction", description: "Reduce operational costs by automating repetitive tasks and optimizing resource allocation.", icon: FaShoppingCart },
+  { title: "Customization", description: "Tailor AI automation solutions to your specific business needs and objectives.", icon: FaCheck },
+  { title: "Scalability", description: "Scale your operations seamlessly with AI automation that adapts to your growing business needs.", icon: FaChartLine },
+  { title: "Improved Accuracy", description: "Increase accuracy and reduce errors in data processing and decision-making with AI-driven solutions.", icon: FaDatabase },
+  { title: "Data Insights", description: "Unlock valuable insights from your data, enabling data-driven decision-making and strategic planning.", icon: FaLightbulb },
 ];
 
 // Component for displaying each service tile
@@ -154,8 +164,24 @@ function App() {
         </div>
       </section>
 
+      {/* Benefits Section */}
+      <section id="benefits" className="py-20">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-black dark:text-white mb-10">What We Offer</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                <benefit.icon className="text-4xl text-blue-600 mb-4" />
+                <h3 className="text-xl font-semibold text-black dark:text-white mb-2">{benefit.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Approach Section */}
-      <section id="approach" className="py-20">
+      <section id="approach" className="py-20 bg-gray-100 dark:bg-gray-800">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center text-black dark:text-white mb-10">Our Proven Approach to AI Success</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -173,7 +199,7 @@ function App() {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="py-20 bg-gray-100 dark:bg-gray-800">
+      <section id="team" className="py-20">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold text-black dark:text-white mb-10">Meet the Team Behind Your AI Transformation</h2>
           <p className="text-lg text-black dark:text-white mb-10">Founded in 2023, Claritys is a premium AI consulting collective that that combines deep technical expertise with business acumen. Our team of 8 highly skilled partners, including 4 PhDs and 4 MBAs, brings diverse experience from industry leaders such as Nestle, Roche, McKinsey, Zalando, UBS and Accenture.
