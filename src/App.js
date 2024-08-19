@@ -58,7 +58,7 @@ const TeamMember = ({ name, title, linkedin }) => {
   return (
     <div className="relative w-40 h-40 overflow-hidden rounded-full mx-auto">
       <img
-        src="/team-placeholder.jpg"
+        src={`${process.env.PUBLIC_URL}/team-placeholder.jpg`}
         alt={name}
         className="w-full h-full object-cover"
       />
@@ -113,7 +113,7 @@ function App() {
 
       {/* Logo and Company Name */}
       <div className="container mx-auto text-center py-10">
-        <img src="/logo.jpeg" alt="Logo" className="mx-auto mb-4" />
+        <img src={`${process.env.PUBLIC_URL}/logo.jpeg`} alt="Logo" className="mx-auto mb-4" />
         <h1 className="text-4xl font-bold text-black dark:text-white">My Amazing Company</h1>
       </div>
 
