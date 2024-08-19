@@ -27,14 +27,14 @@ const teamMembers = [
   },
   {
     name: "Marco",
-    title: "Data Scientist",
+    title: "Sales",
     description: "",
     linkedin: "https://www.linkedin.com/in/marco-babini/",
     image: `${process.env.PUBLIC_URL}/team-placeholder.jpg`,
   },
   {
     name: "Andra",
-    title: "AI Consultant",
+    title: "Consulting",
     description: "",
     linkedin: "https://www.linkedin.com/in/andrakopandi/",
     image: `${process.env.PUBLIC_URL}/team-placeholder.jpg`,
@@ -43,9 +43,9 @@ const teamMembers = [
 
 // Define the services with their titles, descriptions, and icons
 const services = [
-  { title: "Readiness Assessment", description: "Assess your organization's readiness for AI adoption and identify key opportunities.", icon: FaChartLine },
-  { title: "AI Strategy Development", description: "Develop a tailored AI strategy aligned with your business objectives.", icon: FaChessKnight },
-  { title: "Custom AI Solutions", description: "Create customized AI solutions that solve your specific business challenges.", icon: FaCogs },
+  { title: "Readiness Assessment", description: "Gain strategic insights and actionable recommendations on your current AI capabilities, data infrastructure, and readiness to adopt AI solutions​", icon: FaChartLine },
+  { title: "AI Strategy Development", description: "Chart the course for success with tailored AI strategies that align with your business goals, uniting people, processes and technology.", icon: FaChessKnight },
+  { title: "Custom AI Solutions", description: "Streamline your business with tailored AI applications to solve your specific challenges.", icon: FaCogs },
   { title: "Training and Education", description: "Provide training and educational resources to empower your team with AI knowledge.", icon: FaGraduationCap },
 ];
 
@@ -127,7 +127,8 @@ function App() {
     <div className={darkMode ? "dark-mode" : ""}>
       {/* Navigation Bar with Dark Mode Toggle */}
       <header className="bg-white dark:bg-gray-900 shadow-md p-4 flex justify-between items-center">
-        <nav className="flex justify-center space-x-6 w-full">
+        <img src={`${process.env.PUBLIC_URL}/logo.jpeg`} alt="Logo" className="h-8 mr-4" />
+        <nav className="flex justify-center space-x-6 flex-grow">
           <button onClick={() => scrollToSection('services')} className="text-gray-600 dark:text-gray-300 hover:text-blue-600">Services</button>
           <button onClick={() => scrollToSection('approach')} className="text-gray-600 dark:text-gray-300 hover:text-blue-600">Approach</button>
           <button onClick={() => scrollToSection('team')} className="text-gray-600 dark:text-gray-300 hover:text-blue-600">Team</button>
@@ -140,12 +141,6 @@ function App() {
           {darkMode ? "Light Mode" : "Dark Mode"}
         </button>
       </header>
-
-      {/* Logo and Company Name */}
-      <div className="container mx-auto text-center py-10">
-        <img src={`${process.env.PUBLIC_URL}/logo.jpeg`} alt="Logo" className="mx-auto mb-4" />
-        <h1 className="text-4xl font-bold text-black dark:text-white">My Amazing Company</h1>
-      </div>
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-gray-100 dark:bg-gray-800">
@@ -181,7 +176,9 @@ function App() {
       <section id="team" className="py-20 bg-gray-100 dark:bg-gray-800">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold text-black dark:text-white mb-10">Meet the Team Behind Your AI Transformation</h2>
-          <p className="text-lg text-black dark:text-white mb-10">We are a team of AI and business strategy experts with deep experience in developing and implementing AI solutions across various industries.</p>
+          <p className="text-lg text-black dark:text-white mb-10">Founded in 2023, Claritys is a premium AI consulting collective that that combines deep technical expertise with business acumen. Our team of 8 highly skilled partners, including 4 PhDs and 4 MBAs, brings diverse experience from industry leaders such as Nestle, Roche, McKinsey, Zalando, UBS and Accenture.
+
+With a proven track record across various sectors, we specialize in delivering people-focused AI solutions that solve complex business challenges. Our human-centric approach ensures AI integration is not only innovative but also accessible, secure, and cost-effective.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {teamMembers.map((member, index) => (
               <TeamMember
