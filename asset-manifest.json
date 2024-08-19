@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/claritys_demo/static/css/main.fb0d97c3.css",
-    "main.js": "/claritys_demo/static/js/main.e4d3427f.js",
-    "static/js/453.32376112.chunk.js": "/claritys_demo/static/js/453.32376112.chunk.js",
-    "index.html": "/claritys_demo/index.html",
-    "main.fb0d97c3.css.map": "/claritys_demo/static/css/main.fb0d97c3.css.map",
-    "main.e4d3427f.js.map": "/claritys_demo/static/js/main.e4d3427f.js.map",
-    "453.32376112.chunk.js.map": "/claritys_demo/static/js/453.32376112.chunk.js.map"
+    "main.css": "/repository-name/static/css/main.6c80a486.css",
+    "main.js": "/repository-name/static/js/main.f472dee7.js",
+    "index.html": "/repository-name/index.html",
+    "main.6c80a486.css.map": "/repository-name/static/css/main.6c80a486.css.map",
+    "main.f472dee7.js.map": "/repository-name/static/js/main.f472dee7.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb0d97c3.css",
-    "static/js/main.e4d3427f.js"
+    "static/css/main.6c80a486.css",
+    "static/js/main.f472dee7.js"
   ]
 }
