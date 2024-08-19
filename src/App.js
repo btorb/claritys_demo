@@ -1,14 +1,44 @@
 import React, { useState } from 'react';
-import { FaChartLine, FaChessKnight, FaCogs, FaGraduationCap, FaLightbulb, FaPuzzlePiece, FaRocket } from 'react-icons/fa';
+import { FaChartLine, FaChessKnight, FaCogs, FaGraduationCap, FaLightbulb, FaPuzzlePiece, FaRocket, FaLinkedin } from 'react-icons/fa';
 import './App.css';
 
-// Define the team members with their names, titles, and LinkedIn URLs
+// Define the team members with their names, titles, descriptions, LinkedIn URLs, and image URLs
 const teamMembers = [
-  { name: "Yariv", title: "AI Expert", linkedin: "https://www.linkedin.com/in/yariv" },
-  { name: "Sara", title: "Business Strategist", linkedin: "https://www.linkedin.com/in/sara" },
-  { name: "Ben", title: "Machine Learning Engineer", linkedin: "https://www.linkedin.com/in/ben" },
-  { name: "Marco", title: "Data Scientist", linkedin: "https://www.linkedin.com/in/marco" },
-  { name: "Andra", title: "AI Consultant", linkedin: "https://www.linkedin.com/in/andra" },
+  {
+    name: "Yariv",
+    title: "AI Expert",
+    description: ".",
+    linkedin: "https://www.linkedin.com/in/yarivzlevy/",
+    image: `${process.env.PUBLIC_URL}/team-placeholder.jpg`,
+  },
+  {
+    name: "Sara",
+    title: "Product",
+    description: "flapper",
+    linkedin: "https://www.linkedin.com/in/sara-landitortoli/",
+    image: `${process.env.PUBLIC_URL}/team-placeholder.jpg`,
+  },
+  {
+    name: "Ben",
+    title: "Consulting",
+    description: "",
+    linkedin: "https://www.linkedin.com/in/ben-torben-nielsen/",
+    image: `${process.env.PUBLIC_URL}/btn_pic.jpg`,
+  },
+  {
+    name: "Marco",
+    title: "Data Scientist",
+    description: "",
+    linkedin: "https://www.linkedin.com/in/marco-babini/",
+    image: `${process.env.PUBLIC_URL}/team-placeholder.jpg`,
+  },
+  {
+    name: "Andra",
+    title: "AI Consultant",
+    description: "",
+    linkedin: "https://www.linkedin.com/in/andrakopandi/",
+    image: `${process.env.PUBLIC_URL}/team-placeholder.jpg`,
+  },
 ];
 
 // Define the services with their titles, descriptions, and icons
@@ -54,26 +84,26 @@ const Tile = ({ title, description, icon: Icon }) => {
 };
 
 // Component for displaying each team member
-const TeamMember = ({ name, title, linkedin }) => {
+const TeamMember = ({ name, title, description, linkedin, image }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
-    <div className="relative w-40 h-40 overflow-hidden rounded-full mx-auto">
-      <img
-        src={`${process.env.PUBLIC_URL}/team-placeholder.jpg`}
-        alt={name}
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-        <h4 className="text-white text-lg font-semibold">{name}</h4>
-        <p className="text-gray-300">{title}</p>
-        <a
-          href={linkedin}
-          className="text-blue-400 mt-2"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-      </div>
+    <div
+      className="relative w-40 h-40 overflow-hidden rounded-full mx-auto cursor-pointer"
+      onMouseEnter={() => setShowDetails(true)}
+      onMouseLeave={() => setShowDetails(false)}
+    >
+      <img src={image} alt={name} className="w-full h-full object-cover" />
+      {showDetails && (
+        <div className="absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center p-4">
+          <h4 className="text-white text-lg font-semibold">{name}</h4>
+          <p className="text-gray-300 text-sm">{title}</p>
+          <p className="text-gray-400 text-xs mt-2">{description}</p>
+          <a href={linkedin} target="_blank" rel="noopener noreferrer" className="mt-2">
+            <FaLinkedin className="text-blue-400 text-2xl" />
+          </a>
+        </div>
+      )}
     </div>
   );
 };
@@ -154,7 +184,14 @@ function App() {
           <p className="text-lg text-black dark:text-white mb-10">We are a team of AI and business strategy experts with deep experience in developing and implementing AI solutions across various industries.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {teamMembers.map((member, index) => (
-              <TeamMember key={index} name={member.name} title={member.title} linkedin={member.linkedin} />
+              <TeamMember
+                key={index}
+                name={member.name}
+                title={member.title}
+                description={member.description}
+                linkedin={member.linkedin}
+                image={member.image}
+              />
             ))}
           </div>
         </div>
