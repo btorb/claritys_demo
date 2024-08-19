@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/claritys_demo/static/css/main.9356a655.css",
-    "main.js": "/claritys_demo/static/js/main.15f0335e.js",
+    "main.css": "/claritys_demo/static/css/main.ac1864f6.css",
+    "main.js": "/claritys_demo/static/js/main.e49a0ad6.js",
     "static/js/453.f21551e0.chunk.js": "/claritys_demo/static/js/453.f21551e0.chunk.js",
     "index.html": "/claritys_demo/index.html",
-    "main.9356a655.css.map": "/claritys_demo/static/css/main.9356a655.css.map",
-    "main.15f0335e.js.map": "/claritys_demo/static/js/main.15f0335e.js.map",
+    "main.ac1864f6.css.map": "/claritys_demo/static/css/main.ac1864f6.css.map",
+    "main.e49a0ad6.js.map": "/claritys_demo/static/js/main.e49a0ad6.js.map",
     "453.f21551e0.chunk.js.map": "/claritys_demo/static/js/453.f21551e0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9356a655.css",
-    "static/js/main.15f0335e.js"
+    "static/css/main.ac1864f6.css",
+    "static/js/main.e49a0ad6.js"
   ]
 }
